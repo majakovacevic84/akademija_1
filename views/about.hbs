@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About page</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    
+</head>
+<body>
+    {{> header}}
+
+    <h1>{{pageTitle}}</h1>
+
+    {{#if pageAuthor}}
+        <p class="{{pageClass}}">{{pageAuthor}}</p>
+    {{else}}
+        <p>Autor nije proslijedjen!</p>
+    {{/if}}
+
+    <ul>
+        {{#each pagePeople}}
+            <li>{{this.name}} {{this.surname}}</li>
+        {{/each}}
+    </ul>
+
+    {{> footer}}
+
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>
